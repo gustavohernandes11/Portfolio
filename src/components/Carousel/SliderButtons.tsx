@@ -9,17 +9,16 @@ export const SliderButtons = () => {
 
     return (
         <>
-            <NextButton onClick={() => swiper.slideNext()} title="Next">
-                <Animate type="zoomIn">
-                    <ArrowRight src={ArrowSVG} alt="Próximo" />
-                </Animate>
-            </NextButton>
-
             <PrevButton onClick={() => swiper.slidePrev()} title="Prev">
                 <Animate type="zoomIn">
                     <ArrowLeft src={ArrowSVG} alt="Anterior" />
                 </Animate>
             </PrevButton>
+            <NextButton onClick={() => swiper.slideNext()} title="Next">
+                <Animate type="zoomIn">
+                    <ArrowRight src={ArrowSVG} alt="Próximo" />
+                </Animate>
+            </NextButton>
         </>
     );
 };
@@ -27,11 +26,18 @@ export const SliderButtons = () => {
 const SlideButton = styled.button`
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background: transparent;
+    bottom: auto;
+    transform: translateY(-20rem);
+    border: 1px solid gray;
+    background: white;
+    padding: 1rem;
+    border-radius: 5rem;
     z-index: 10;
     scale: 0.5;
+
+    @media (max-width: 768px) {
+        scale: 0.25;
+    }
 
     :hover {
         cursor: pointer;

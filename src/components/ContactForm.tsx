@@ -39,7 +39,7 @@ export const ContactForm = () => {
                     type="text"
                     minLength={3}
                     maxLength={300}
-                    placeholder="Fi do seu Zé"
+                    placeholder="Francisco"
                     name="name-input"
                     id="name-input"
                 />
@@ -52,7 +52,7 @@ export const ContactForm = () => {
                     minLength={5}
                     maxLength={50}
                     pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
-                    placeholder="@gmail.com"
+                    placeholder="chico@gmail.com"
                     name="email-input"
                     id="email-input"
                 />

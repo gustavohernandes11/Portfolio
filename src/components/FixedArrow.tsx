@@ -67,17 +67,13 @@ export const StyledImage = styled(Image)<{ isScrollEnd: boolean }>`
 export const StyledFixedArrow = styled.button`
     position: fixed;
     padding: 1rem;
-    bottom: 10rem;
-    right: 10rem;
+    bottom: 3rem;
+    right: 5rem;
     aspect-ratio: 1/1;
     background-color: transparent;
     border: none;
     z-index: 100;
-
-    :focus {
-        border-radius: 100%;
-        outline: 3px dashed black;
-    }
+    scale: 0.5;
 
     :hover {
         cursor: pointer;
@@ -85,8 +81,8 @@ export const StyledFixedArrow = styled.button`
     }
 
     @media (max-width: 768px) {
-        bottom: 1rem;
-        right: 1rem;
-        scale: 0.6;
+        bottom: 0rem;
+        right: 0rem;
+        scale: 0.4;
     }
 `;

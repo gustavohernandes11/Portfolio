@@ -54,8 +54,4 @@ const Content = styled.div`
 
 const Span = styled.div`
     margin-bottom: 1rem;
-
-    @media (max-width: 768px) {
-        margin-bottom: 3rem;
-    }
 `;

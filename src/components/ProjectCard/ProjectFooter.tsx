@@ -1,9 +1,8 @@
 import { Github } from "@styled-icons/simple-icons";
-import { Button } from "../Button";
-import { Chip } from "../Chip";
 import styled from "styled-components";
-import { TagType } from "../../../types/TagType";
 import { Mixins } from "styles/Mixins";
+import { TagType } from "../../../types/TagType";
+import { Button } from "../Button";
 
 export interface FooterType {
     githubUrl?: string;
@@ -14,15 +13,16 @@ export interface FooterType {
 export const ProjectFooter = ({ githubUrl, deployUrl, tags }: FooterType) => {
     return (
         <FooterContainer>
-            <TagsContainer>
-                {tags &&
-                    tags?.map((tag) => <Chip key={tag.name} text={tag.name} />)}
-            </TagsContainer>
             <HStack>
                 {githubUrl && (
-                    <StyledGithubButton target="_blank" href={githubUrl}>
+                    <GithubButton
+                        type="button"
+                        target="_blank"
+                        href={githubUrl}
+                    >
+                        <GithubButtonText>Github</GithubButtonText>
                         <Github color="white" size="25" />
-                    </StyledGithubButton>
+                    </GithubButton>
                 )}
                 {deployUrl && (
                     <Button
@@ -31,7 +31,7 @@ export const ProjectFooter = ({ githubUrl, deployUrl, tags }: FooterType) => {
                         as="a"
                         variant="purple-rounded"
                     >
-                        Ver online →
+                        Confira →
                     </Button>
                 )}
             </HStack>
@@ -42,7 +42,7 @@ const FooterContainer = styled.div`
     display: flex;
     align-items: start;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
     padding: 1rem;
     gap: 2rem;
@@ -55,20 +55,18 @@ const FooterContainer = styled.div`
     }
 `;
 
-const TagsContainer = styled.span`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+const GithubButton = styled.a`
+    ${Mixins.flexCenter()}
+    text-decoration: none;
 `;
 
-const StyledGithubButton = styled.a`
-    ${Mixins.flexCenter()}
-    padding: 0.5rem;
+const GithubButtonText = styled.p`
+    padding-right: 0.5rem;
+    color: white;
 `;
 
 const HStack = styled.span`
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
+    gap: 1rem;
 `;

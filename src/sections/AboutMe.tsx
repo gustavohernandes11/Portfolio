@@ -33,7 +33,7 @@ export const AboutMe = ({ content }: AboutMeType) => (
 const StyledTextContainer = styled.div`
     max-width: 40rem;
     margin-inline: auto;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 
     @media (max-width: 768px) {
         padding-inline: 1rem;

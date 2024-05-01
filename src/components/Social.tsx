@@ -36,7 +36,7 @@ const SocialButton = ({ icon, href, color }: SocialIconProps) => {
 
     return (
         <a href={href}>
-            <IconButton color={color} icon={icon} size={isTablet ? 20 : 45} />
+            <IconButton color={color} icon={icon} size={isTablet ? 20 : 30} />
         </a>
     );
 };

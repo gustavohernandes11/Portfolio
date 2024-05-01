@@ -28,9 +28,8 @@ const StyledButton = styled("button")<{
 }>`
     ${({ variant }) => css`
         ${Mixins.flexCenter("row")}
-        padding: 0.5rem 1.25rem;
+        padding: 0.5rem 1rem;
         border: none;
-        border-radius: 0.25rem;
         text-decoration: none;
         color: black;
         font-size: 1rem;
@@ -39,15 +38,16 @@ const StyledButton = styled("button")<{
         ${variant == "light" &&
         css`
             background-color: transparent;
+
             :hover {
                 cursor: pointer;
             }
         `}
         ${variant == "purple-rounded" &&
         css`
-            border-radius: 32rem;
             background-color: purple;
             color: white;
+
             :hover {
                 background-color: #850e85;
                 cursor: pointer;
@@ -58,6 +58,7 @@ const StyledButton = styled("button")<{
         css`
             background-color: black;
             color: white;
+
             :hover {
                 background-color: #2e2e2e;
                 cursor: pointer;

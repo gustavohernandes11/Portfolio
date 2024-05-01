@@ -1,3 +1,4 @@
+import { Chip } from "components/Chip";
 import { useIntersection } from "hooks/useIntersection";
 import Image from "next/image";
 import styled from "styled-components";
@@ -18,14 +19,22 @@ export const ProjectCard = ({
     return (
         <Container ref={ref} isIntersecting={isIntersecting}>
             <ProjectHeader title={title} description={description} />
-            <Image
-                className="projectCover"
-                src={image.url}
-                alt={image.alt}
-                width={image.width}
-                height={image.height}
-                loading="lazy"
-            />
+            <ImageWrapper>
+                <Image
+                    className="projectCover"
+                    src={image.url}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    loading="lazy"
+                />
+                <TagsContainer>
+                    {tags &&
+                        tags?.map((tag) => (
+                            <Chip key={tag.name} text={tag.name} />
+                        ))}
+                </TagsContainer>
+            </ImageWrapper>
             <ProjectFooter
                 githubUrl={githubUrl}
                 deployUrl={deployUrl}
@@ -43,7 +52,6 @@ const Container = styled.div<{ isIntersecting: boolean }>`
     transform: ${({ isIntersecting }) =>
         isIntersecting ? "scale(1)" : "scale(0.75)"};
     transition: transform 250ms ease-in-out;
-    border-radius: 1rem;
     overflow: hidden;
 
     .projectCover {
@@ -52,6 +60,7 @@ const Container = styled.div<{ isIntersecting: boolean }>`
         max-height: 500px;
         width: 100%;
         padding: 1rem;
+        margin-bottom: 2rem;
     }
 
     :hover {
@@ -70,6 +79,29 @@ const Container = styled.div<{ isIntersecting: boolean }>`
 
         .projectCover {
             max-height: 400px;
+            margin-bottom: 0rem;
         }
     }
+`;
+
+const TagsContainer = styled.span`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 0rem;
+    bottom: 0rem;
+    gap: 0.25rem;
+    padding: 0.5rem;
+
+    @media (max-width: 768px) {
+        position: static;
+    }
+`;
+
+const ImageWrapper = styled.span`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
 `;

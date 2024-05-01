@@ -10,13 +10,14 @@ export const Chip = ({ text }: ChipType) => (
 );
 
 const Container = styled.div`
-    border-radius: 5rem;
-    background-color: #ecececc3;
+    border: 1px solid white;
+    border-radius: 2.5rem;
+    background-color: #000000;
     margin: 0;
 `;
 const StyledText = styled.div`
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin: 0;
-    padding: 0.25rem 0.5rem;
-    color: #000000;
+    padding: 0.5rem 1rem;
+    color: #ffffff;
 `;
