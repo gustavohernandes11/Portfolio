@@ -1,16 +1,11 @@
-import { Animate } from "components/Animate";
 import { Social } from "components/Social";
 import styled from "styled-components";
 import { Mixins } from "styles/Mixins";
 
 export const Footer = () => (
     <StyledFooter>
-        <Animate type="slideLeft">
-            <Social color="white" />
-        </Animate>
-        <Animate type="slideLeft">
-            <p>© 2024-present Gustavo Hernandes. All Rights Reserved.</p>
-        </Animate>
+        <Social color="white" />
+        <p>© 2024-present Gustavo Hernandes. All Rights Reserved.</p>
     </StyledFooter>
 );
 
@@ -20,6 +15,7 @@ const StyledFooter = styled.footer`
     justify-content: center;
 
     padding: 3rem 5rem;
+    gap: 1rem;
     background-color: black;
     color: #bebebe;
 

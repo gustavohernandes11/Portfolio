@@ -57,7 +57,7 @@ const Container = styled.div<{ isIntersecting: boolean }>`
     .projectCover {
         object-fit: contain;
         height: auto;
-        max-height: 500px;
+        max-height: 30rem;
         width: 100%;
         padding: 1rem;
         margin-bottom: 2rem;

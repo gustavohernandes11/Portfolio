@@ -1,5 +1,4 @@
 import { Animate } from "components/Animate";
-import { Logo } from "components/Logo";
 import { SectionContainer } from "components/SectionContainer";
 import { Social } from "components/Social";
 import styled from "styled-components";
@@ -13,9 +12,6 @@ export const Intro = ({ name, title }: IntroType) => (
     <SectionContainer dottedBackground id="home">
         <Content>
             <Animate type="slideLeft">
-                <Span>
-                    <Logo />
-                </Span>
                 <Span>
                     <MainHeading>{name}</MainHeading>
                     <p>{title}</p>
@@ -31,7 +27,7 @@ export const Intro = ({ name, title }: IntroType) => (
 const MainHeading = styled.h1`
     font-size: 6rem;
     font-weight: bolder;
-    margin: 0;
+    margin: 0.5rem 0;
 
     @media (max-width: 768px) {
         font-size: 3.25rem;
@@ -41,9 +37,11 @@ const MainHeading = styled.h1`
 const Content = styled.div`
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-direction: column;
-    margin: auto 8rem;
-    max-width: 45%;
+    padding: 0rem 10rem;
+    margin-block: auto;
+    max-width: 61.25rem;
 
     @media (max-width: 768px) {
         margin: 1rem;

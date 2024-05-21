@@ -111,19 +111,27 @@ const Input = styled.input`
     padding: 1rem;
     border-radius: 0.25rem;
     background-color: white;
-    border: 1px solid #e4e4e4;
+    border: 1px solid #a7a7a7;
     width: 100%;
-    min-width: 16rem;
+    min-width: 26rem;
+
+    @media (max-width: 768px) {
+        min-width: 16rem;
+    }
 `;
 
 const Textarea = styled.textarea`
     padding: 1rem;
     border-radius: 0.25rem;
     background-color: white;
-    border: 1px solid #e4e4e4;
+    border: 1px solid #a7a7a7;
     width: 100%;
-    min-width: 16rem;
+    min-width: 26rem;
     resize: vertical;
     min-height: 4rem;
     max-height: 14rem;
+
+    @media (max-width: 768px) {
+        min-width: 16rem;
+    }
 `;

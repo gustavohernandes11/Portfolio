@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: 'Ubuntu', sans-serif;
- 
+ margin: 0;
 }
 body {
   overflow-x: hidden;

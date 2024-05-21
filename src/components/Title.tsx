@@ -9,10 +9,10 @@ export const Title = ({ children, as, ...props }: WrapperType) => (
 const StyledHeading = styled.h2`
     ${Mixins.flexCenter()}
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 2rem 0;
 
     @media (max-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 `;

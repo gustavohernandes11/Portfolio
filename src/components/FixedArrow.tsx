@@ -65,10 +65,10 @@ export const StyledImage = styled(Image)<{ isScrollEnd: boolean }>`
 `;
 
 export const StyledFixedArrow = styled.button`
-    position: fixed;
+    position: absolute;
     padding: 1rem;
-    bottom: 3rem;
-    right: 5rem;
+    bottom: 10rem;
+    right: 10rem;
     aspect-ratio: 1/1;
     background-color: transparent;
     border: none;

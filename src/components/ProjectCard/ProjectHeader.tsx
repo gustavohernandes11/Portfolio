@@ -24,9 +24,9 @@ const HeaderContainer = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
     color: white;
-    margin: 0;
 
     @media (max-width: 768px) {
         font-size: 1.5rem;
