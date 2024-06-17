@@ -15,8 +15,8 @@ export const IconButton = ({ onClick, icon, ...props }: IconButtonProps) => (
 );
 
 const StyledButton = styled.button`
-    padding: 0.5rem;
-    margin: 0.2rem;
+    padding: 0;
+    margin-right: 1rem;
     background: transparent;
     border: none;
 

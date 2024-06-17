@@ -1,10 +1,10 @@
-import { Chip } from "components/Chip";
+import { Pill } from "components/Pill";
 import { useIntersection } from "hooks/useIntersection";
 import Image from "next/image";
 import styled from "styled-components";
 import { ProjectType } from "../../../types/ProjectType";
+import { ProjectBody } from "./ProjectBody";
 import { ProjectFooter } from "./ProjectFooter";
-import { ProjectHeader } from "./ProjectHeader";
 
 export const ProjectCard = ({
     title,
@@ -18,7 +18,6 @@ export const ProjectCard = ({
 
     return (
         <Container ref={ref} isIntersecting={isIntersecting}>
-            <ProjectHeader title={title} description={description} />
             <ImageWrapper>
                 <Image
                     className="projectCover"
@@ -31,10 +30,11 @@ export const ProjectCard = ({
                 <TagsContainer>
                     {tags &&
                         tags?.map((tag) => (
-                            <Chip key={tag.name} text={tag.name} />
+                            <Pill key={tag.name} text={tag.name} />
                         ))}
                 </TagsContainer>
             </ImageWrapper>
+            <ProjectBody title={title} description={description} />
             <ProjectFooter
                 githubUrl={githubUrl}
                 deployUrl={deployUrl}
@@ -46,11 +46,8 @@ export const ProjectCard = ({
 
 const Container = styled.div<{ isIntersecting: boolean }>`
     max-width: 75vw;
-    background-color: white;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.58);
     transform: ${({ isIntersecting }) =>
-        isIntersecting ? "scale(1)" : "scale(0.75)"};
+        isIntersecting ? "scale(1)" : "scale(0.90)"};
     transition: transform 250ms ease-in-out;
     overflow: hidden;
 
@@ -74,8 +71,6 @@ const Container = styled.div<{ isIntersecting: boolean }>`
         gap: 0rem;
         margin-inline: 0rem;
         max-width: 100vw;
-        transform: ${({ isIntersecting }) =>
-            isIntersecting ? "scale(1)" : "scale(0.90)"};
 
         .projectCover {
             max-height: 400px;

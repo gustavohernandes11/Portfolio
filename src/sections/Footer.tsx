@@ -1,23 +1,35 @@
 import { Social } from "components/Social";
+import { Text } from "components/Text";
 import styled from "styled-components";
 import { Mixins } from "styles/Mixins";
 
 export const Footer = () => (
     <StyledFooter>
-        <Social color="white" />
-        <p>© 2024-present Gustavo Hernandes. All Rights Reserved.</p>
+        <Content>
+            <Social color="white" />
+            <Text color="white">© Criado por Gustavo Hernandes da Silva</Text>
+        </Content>
     </StyledFooter>
 );
 
 const StyledFooter = styled.footer`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-top: 2rem;
+    background-color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.white};
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-block: 3rem;
 
-    padding: 3rem 5rem;
+    @media (max-width: 768px) {
+        padding: 3rem;
+        grid-template-columns: 1fr;
+    }
+`;
+
+const Content = styled.div`
+    display: grid;
     gap: 1rem;
-    background-color: black;
-    color: #bebebe;
+    grid-column: 2 / 4;
 
     @media (max-width: 768px) {
         ${Mixins.flexCenter("column")}

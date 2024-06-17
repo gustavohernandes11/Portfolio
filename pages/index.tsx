@@ -1,41 +1,37 @@
 import type { GetStaticProps, NextPage } from "next";
 
-import { FixedArrow } from "components/FixedArrow";
 import { Header } from "components/Header";
 import { Main } from "components/Main";
-import { AboutMe } from "sections/AboutMe";
+import { AboutMeSection } from "sections/AboutMeSection";
+import { ContactSection } from "sections/ContactSection";
 import { Footer } from "sections/Footer";
+import { ProjectsSection } from "sections/ProjectsSection";
+import { SkillsSection } from "sections/SkillsSection";
 import { Seo } from "../src/components/Seo";
-import { Contact } from "../src/sections/Contact";
-import { Intro } from "../src/sections/Intro";
-import { Projects } from "../src/sections/Projects";
 import { MetaType } from "../types/MetaType";
 import { ProjectType } from "../types/ProjectType";
 
 type HomeProps = {
     data: {
-        name: string;
         about: any;
-        title: string;
         projects: ProjectType[];
         meta: MetaType;
     };
 };
 
-const Home: NextPage<HomeProps> = ({
-    data: { name, about, title, projects, meta },
-}) => {
+const Home: NextPage<HomeProps> = ({ data: { about, projects, meta } }) => {
     return (
-        <Main>
-            <Seo meta={meta} />
-            <Header />
-            <FixedArrow />
-            <Intro name={name} title={title} />
-            <AboutMe content={about} />
-            <Projects projects={projects} />
-            <Contact />
+        <>
+            <Main>
+                <Seo meta={meta} />
+                <Header />
+                <AboutMeSection content={about} />
+                <SkillsSection />
+                <ProjectsSection projects={projects} />
+                <ContactSection />
+            </Main>
             <Footer />
-        </Main>
+        </>
     );
 };
 

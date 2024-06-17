@@ -6,7 +6,12 @@ export const Main = ({ children }: WrapperType) => {
 };
 
 export const StyledMain = styled.main`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1rem;
+
     @media (max-width: 768px) {
+        grid-template-columns: 1fr;
         max-width: unset;
     }
 `;

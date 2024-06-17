@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-type ChipType = {
+type PillType = {
     text: string;
 };
-export const Chip = ({ text }: ChipType) => (
+export const Pill = ({ text }: PillType) => (
     <Container>
         <StyledText>{text}</StyledText>
     </Container>
@@ -15,6 +15,7 @@ const Container = styled.div`
     background-color: #000000;
     margin: 0;
 `;
+
 const StyledText = styled.div`
     font-size: 0.8rem;
     margin: 0;

@@ -1,4 +1,6 @@
+import { Send } from "@styled-icons/feather";
 import styled from "styled-components";
+import { Mixins } from "styles/Mixins";
 import { Button } from "./Button";
 
 const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -31,10 +33,10 @@ export const ContactForm = () => {
             onSubmit={handleSubmit}
         >
             <SmallSpan>
-                <Input type="hidden" name="form-name" value="contact" />
+                <StyledInput type="hidden" name="form-name" value="contact" />
 
                 <Label htmlFor="name-input">Nome</Label>
-                <Input
+                <StyledInput
                     required
                     type="text"
                     minLength={3}
@@ -46,7 +48,7 @@ export const ContactForm = () => {
             </SmallSpan>
             <SmallSpan>
                 <Label htmlFor="email-input">Email</Label>
-                <Input
+                <StyledInput
                     required
                     type="email"
                     minLength={5}
@@ -59,7 +61,7 @@ export const ContactForm = () => {
             </SmallSpan>
             <LargeSpan>
                 <Label htmlFor="message-input">Mensagem</Label>
-                <Textarea
+                <StyledTextarea
                     required
                     name="message-input"
                     minLength={10}
@@ -67,9 +69,11 @@ export const ContactForm = () => {
                     id="message-input"
                 />
             </LargeSpan>
-            <JustifyRight>
-                <Button type="submit">Enviar</Button>
-            </JustifyRight>
+            <HorizontalSpan>
+                <Button icon={<Send color="white" size="25" />} type="submit">
+                    Enviar
+                </Button>
+            </HorizontalSpan>
         </StyledContactForm>
     );
 };
@@ -101,37 +105,21 @@ const SmallSpan = styled.span`
         grid-column: span 2;
     }
 `;
-const JustifyRight = styled(LargeSpan)`
+
+const HorizontalSpan = styled(LargeSpan)`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 `;
 
-const Input = styled.input`
-    padding: 1rem;
-    border-radius: 0.25rem;
-    background-color: white;
-    border: 1px solid #a7a7a7;
-    width: 100%;
-    min-width: 26rem;
-
-    @media (max-width: 768px) {
-        min-width: 16rem;
-    }
+const StyledInput = styled.input`
+    ${Mixins.inputBaseStyles}
 `;
 
-const Textarea = styled.textarea`
-    padding: 1rem;
-    border-radius: 0.25rem;
-    background-color: white;
-    border: 1px solid #a7a7a7;
-    width: 100%;
+const StyledTextarea = styled.textarea`
+    ${Mixins.inputBaseStyles}
     min-width: 26rem;
     resize: vertical;
     min-height: 4rem;
     max-height: 14rem;
-
-    @media (max-width: 768px) {
-        min-width: 16rem;
-    }
 `;

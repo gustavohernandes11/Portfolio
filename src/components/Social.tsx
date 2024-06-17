@@ -1,5 +1,4 @@
 import { Github, Leetcode, Linkedin } from "@styled-icons/simple-icons";
-import { useMediaQuery } from "hooks/useMediaQuery";
 import { IconButton } from "./IconButton";
 
 type SocialIconProps = {
@@ -14,14 +13,14 @@ type SocialProps = {
 export const Social = ({ color = "black" }: SocialProps) => (
     <span>
         <SocialButton
-            icon={Github}
-            color={color}
-            href="https://github.com/gustavohernandes11"
-        />
-        <SocialButton
             icon={Linkedin}
             color={color}
             href="https://www.linkedin.com/in/gustavo-hernandes11/"
+        />
+        <SocialButton
+            icon={Github}
+            color={color}
+            href="https://github.com/gustavohernandes11"
         />
         <SocialButton
             icon={Leetcode}
@@ -32,11 +31,9 @@ export const Social = ({ color = "black" }: SocialProps) => (
 );
 
 const SocialButton = ({ icon, href, color }: SocialIconProps) => {
-    const isTablet = useMediaQuery(1024);
-
     return (
         <a href={href}>
-            <IconButton color={color} icon={icon} size={isTablet ? 20 : 30} />
+            <IconButton color={color} icon={icon} size={24} />
         </a>
     );
 };

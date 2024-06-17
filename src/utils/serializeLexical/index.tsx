@@ -15,7 +15,8 @@ import type {
 import escapeHTML from "escape-html";
 import { Fragment } from "react";
 
-import { Title } from "components/Title";
+import { Heading } from "components/Heading";
+import { Text } from "components/Text";
 import {
     IS_BOLD,
     IS_CODE,
@@ -118,7 +119,7 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
                         return <code key={index}>{serializedChildren}</code>;
                     }
                     case "paragraph": {
-                        return <p key={index}>{serializedChildren}</p>;
+                        return <Text key={index}>{serializedChildren}</Text>;
                     }
                     case "heading": {
                         const node = _node as SerializedHeadingNode;
@@ -129,9 +130,9 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
                         >;
                         const Tag = node?.tag as Heading;
                         return (
-                            <Title as={Tag} key={index}>
+                            <Heading as={Tag} key={index}>
                                 {serializedChildren}
-                            </Title>
+                            </Heading>
                         );
                     }
                     case "list": {

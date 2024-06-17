@@ -1,68 +1,58 @@
 import styled, { css } from "styled-components";
-import { Animations } from "styles/Animations";
 import { Mixins } from "styles/Mixins";
 
 type ButtonType = {
-    variant?: "light" | "normal" | "purple-rounded";
+    variant?: "primary" | "secondary";
     as?: "button" | "a";
     href?: string;
     target?: string;
+    icon?: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({
     children,
-    variant = "normal",
+    variant = "primary",
     as = "button",
     href,
+    icon,
     ...props
 }: ButtonType) => {
     return (
         <StyledButton href={href} as={as} variant={variant} {...props}>
             {children}
+            {icon ?? icon}
         </StyledButton>
     );
 };
 
 const StyledButton = styled("button")<{
-    variant: "light" | "normal" | "purple-rounded";
+    variant: "primary" | "secondary";
 }>`
     ${({ variant }) => css`
         ${Mixins.flexCenter("row")}
         padding: 0.5rem 1rem;
         border: none;
         text-decoration: none;
-        color: black;
+        color: ${({ theme }) => theme.colors.black};
+        border-radius: 0.5rem;
         font-size: 1rem;
         white-space: nowrap;
+        gap: 0.5rem;
 
-        ${variant == "light" &&
+        :hover {
+            cursor: pointer;
+        }
+
+        ${variant == "secondary" &&
         css`
             background-color: transparent;
-
-            :hover {
-                cursor: pointer;
-            }
+            color: ${({ theme }) => theme.colors.white};
+            border: 1px solid ${({ theme }) => theme.colors.border};
         `}
-        ${variant == "purple-rounded" &&
+        ${variant == "primary" &&
         css`
-            background-color: purple;
+            background-color: ${({ theme }) => theme.colors.purple};
             color: white;
-
-            :hover {
-                background-color: #850e85;
-                cursor: pointer;
-                animation: ${Animations.pulse} 1.5s;
-            }
-        `}
-        ${variant == "normal" &&
-        css`
-            background-color: black;
-            color: white;
-
-            :hover {
-                background-color: #2e2e2e;
-                cursor: pointer;
-            }
         `}
     `};
 `;

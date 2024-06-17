@@ -16,11 +16,14 @@ export const NavLink = ({ children, href, onClick }: NavLinkProps) => {
 };
 
 export const StyledLink = styled(Link)`
-    color: black;
     position: relative;
-    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    color: black;
     text-decoration: none;
-    margin: 0 0.5rem;
     font-size: 1rem;
-    font-weight: bold;
+    transition: color 500ms ease;
+
+    :hover {
+        color: ${({ theme }) => theme.colors.purple};
+    }
 `;
