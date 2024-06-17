@@ -7,14 +7,14 @@ export interface HeaderType {
 
 export const ProjectBody = ({ title, description }: HeaderType) => {
     return (
-        <HeaderContainer>
-            <ProjectTitle>{title}</ProjectTitle>
-            <ProjectDescription>{description}</ProjectDescription>
-        </HeaderContainer>
+        <StyledContainer>
+            <StyledTitle>{title}</StyledTitle>
+            <StyledDescription color="white">{description}</StyledDescription>
+        </StyledContainer>
     );
 };
 
-const HeaderContainer = styled.div`
+const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -24,7 +24,7 @@ const HeaderContainer = styled.div`
     background: ${({ theme }) => theme.colors.black};
 `;
 
-const ProjectTitle = styled.h3`
+const StyledTitle = styled.h3`
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: ${({ theme }) => theme.colors.white};
@@ -34,7 +34,7 @@ const ProjectTitle = styled.h3`
     }
 `;
 
-const ProjectDescription = styled.p`
+const StyledDescription = styled.p`
     margin-bottom: 1rem;
     font-size: 1rem;
     color: ${({ theme }) => theme.colors.white};

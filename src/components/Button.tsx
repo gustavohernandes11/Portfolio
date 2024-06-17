@@ -25,34 +25,29 @@ export const Button = ({
     );
 };
 
-const StyledButton = styled("button")<{
-    variant: "primary" | "secondary";
-}>`
+const StyledButton = styled("button")<ButtonType>`
     ${({ variant }) => css`
         ${Mixins.flexCenter("row")}
         padding: 0.5rem 1rem;
         border: none;
         text-decoration: none;
-        color: ${({ theme }) => theme.colors.black};
+        color: ${({ theme }) => theme.colors.white};
         border-radius: 0.5rem;
         font-size: 1rem;
-        white-space: nowrap;
         gap: 0.5rem;
 
         :hover {
             cursor: pointer;
         }
 
-        ${variant == "secondary" &&
+        ${variant === "secondary" &&
         css`
             background-color: transparent;
-            color: ${({ theme }) => theme.colors.white};
             border: 1px solid ${({ theme }) => theme.colors.border};
         `}
-        ${variant == "primary" &&
+        ${variant === "primary" &&
         css`
             background-color: ${({ theme }) => theme.colors.purple};
-            color: white;
         `}
     `};
 `;

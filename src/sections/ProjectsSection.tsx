@@ -21,16 +21,16 @@ export const ProjectsSection = ({ projects }: ProjectsType) => {
     return (
         <SectionContainer id="projects">
             <Heading>Projetos</Heading>
-            <ProjectGrid>
+            <StyledGrid>
                 {projects.map((proj) => (
                     <ProjectCard {...proj} />
                 ))}
-            </ProjectGrid>
+            </StyledGrid>
         </SectionContainer>
     );
 };
 
-const ProjectGrid = styled.div`
+const StyledGrid = styled.div`
     display: grid;
     gap: 1rem;
 `;

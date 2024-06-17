@@ -28,7 +28,7 @@ const StyledTextContainer = styled.span`
     & p {
         margin-bottom: 1rem;
     }
-    // to apply margin bottom in nested elements
+    // workaround to apply margin bottom in nested elements
     p {
         display: inline-grid;
     }

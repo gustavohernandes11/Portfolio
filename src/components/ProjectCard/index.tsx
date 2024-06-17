@@ -17,54 +17,45 @@ export const ProjectCard = ({
     const { isIntersecting, ref } = useIntersection({ recurrence: "always" });
 
     return (
-        <Container ref={ref} isIntersecting={isIntersecting}>
-            <ImageWrapper>
+        <StyledContainer ref={ref} isIntersecting={isIntersecting}>
+            <StyledImageContainer>
                 <Image
-                    className="projectCover"
+                    className="projectImage"
                     src={image.url}
                     alt={image.alt}
                     width={image.width}
                     height={image.height}
                     loading="lazy"
                 />
-                <TagsContainer>
+                <StyledHSpan>
                     {tags &&
                         tags?.map((tag) => (
                             <Pill key={tag.name} text={tag.name} />
                         ))}
-                </TagsContainer>
-            </ImageWrapper>
+                </StyledHSpan>
+            </StyledImageContainer>
             <ProjectBody title={title} description={description} />
             <ProjectFooter
                 githubUrl={githubUrl}
                 deployUrl={deployUrl}
                 tags={tags}
             />
-        </Container>
+        </StyledContainer>
     );
 };
 
-const Container = styled.div<{ isIntersecting: boolean }>`
-    max-width: 75vw;
+const StyledContainer = styled.div<{ isIntersecting: boolean }>`
     transform: ${({ isIntersecting }) =>
         isIntersecting ? "scale(1)" : "scale(0.90)"};
     transition: transform 250ms ease-in-out;
-    overflow: hidden;
 
-    .projectCover {
+    .projectImage {
         object-fit: contain;
         height: auto;
         max-height: 30rem;
         width: 100%;
         padding: 1rem;
         margin-bottom: 2rem;
-    }
-
-    :hover {
-        cursor: grab;
-    }
-    :active {
-        cursor: grabbing;
     }
 
     @media (max-width: 768px) {
@@ -79,22 +70,22 @@ const Container = styled.div<{ isIntersecting: boolean }>`
     }
 `;
 
-const TagsContainer = styled.span`
+const StyledHSpan = styled.span`
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     position: absolute;
     left: 0rem;
     bottom: 0rem;
     gap: 0.25rem;
-    padding: 0.5rem;
+    padding-block: 0.5rem;
 
     @media (max-width: 768px) {
         position: static;
     }
 `;
 
-const ImageWrapper = styled.span`
+const StyledImageContainer = styled.span`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

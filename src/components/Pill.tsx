@@ -3,22 +3,22 @@ import styled from "styled-components";
 type PillType = {
     text: string;
 };
+
 export const Pill = ({ text }: PillType) => (
-    <Container>
+    <StyledContainer>
         <StyledText>{text}</StyledText>
-    </Container>
+    </StyledContainer>
 );
 
-const Container = styled.div`
-    border: 1px solid white;
+const StyledContainer = styled.div`
+    border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: 2.5rem;
-    background-color: #000000;
-    margin: 0;
+    background-color: ${({ theme }) => theme.colors.black};
 `;
 
-const StyledText = styled.div`
+const StyledText = styled.p`
     font-size: 0.8rem;
-    margin: 0;
     padding: 0.5rem 1rem;
-    color: #ffffff;
+    margin: 0;
+    color: ${({ theme }) => theme.colors.white};
 `;

@@ -14,7 +14,7 @@ import { theme } from "styles/Theme";
 export const SkillsSection = () => (
     <SectionContainer id="skills">
         <Heading>Habilidades</Heading>
-        <Grid>
+        <StyledGrid>
             <SkillCard
                 description="Design e Prototipagem com Figma"
                 icon={<Figma width={32} color={theme.colors.black} />}
@@ -35,11 +35,11 @@ export const SkillsSection = () => (
                 description="Criação de APIs com Node e Express"
                 icon={<Nodedotjs width={32} color={theme.colors.black} />}
             />
-        </Grid>
+        </StyledGrid>
     </SectionContainer>
 );
 
-const Grid = styled.div`
+const StyledGrid = styled.div`
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));

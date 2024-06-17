@@ -9,7 +9,7 @@ export const SectionContainer = ({ children, id }: SectionContainerProps) => {
     return <Container id={id}>{children}</Container>;
 };
 
-const Container = styled.section<SectionContainerProps>`
+const Container = styled.section`
     display: flex;
     flex-direction: column;
     margin-top: 4rem;

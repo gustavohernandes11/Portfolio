@@ -5,10 +5,10 @@ import { Mixins } from "styles/Mixins";
 
 export const Footer = () => (
     <StyledFooter>
-        <Content>
+        <StyledInnerContainer>
             <Social color="white" />
             <Text color="white">© Criado por Gustavo Hernandes da Silva</Text>
-        </Content>
+        </StyledInnerContainer>
     </StyledFooter>
 );
 
@@ -26,7 +26,7 @@ const StyledFooter = styled.footer`
     }
 `;
 
-const Content = styled.div`
+const StyledInnerContainer = styled.div`
     display: grid;
     gap: 1rem;
     grid-column: 2 / 4;

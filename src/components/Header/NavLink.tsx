@@ -17,8 +17,8 @@ export const NavLink = ({ children, href, onClick }: NavLinkProps) => {
 
 export const StyledLink = styled(Link)`
     position: relative;
-    margin-left: 0.5rem;
-    color: black;
+    margin-right: 0.5rem;
+    color: ${({ theme }) => theme.colors.black};
     text-decoration: none;
     font-size: 1rem;
     transition: color 500ms ease;

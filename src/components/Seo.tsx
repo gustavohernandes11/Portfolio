@@ -1,5 +1,4 @@
 import Head from "next/head";
-import React from "react";
 import { MetaType } from "../../types/MetaType";
 
 type SeoProps = {
@@ -7,7 +6,7 @@ type SeoProps = {
 };
 const defaultMeta = {
     title: "Gustavo Hernandes da Silva | Portfolio",
-    description: "Portfolio de um desenvolvedor de sites e sistemas para web.",
+    description: "Portfolio de um desenvolvedor fullstack",
     keywords:
         "Portfolio, Javascript, Css, HTML, React, Typescript, Engenharia de Produção, Projetos, Styled-Components, Nodejs, Node, API, Next, Nextjs",
 };

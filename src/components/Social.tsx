@@ -1,4 +1,5 @@
 import { Github, Leetcode, Linkedin } from "@styled-icons/simple-icons";
+import { theme } from "styles/Theme";
 import { IconButton } from "./IconButton";
 
 type SocialIconProps = {
@@ -14,17 +15,17 @@ export const Social = ({ color = "black" }: SocialProps) => (
     <span>
         <SocialButton
             icon={Linkedin}
-            color={color}
+            color={color ?? theme.colors[color]}
             href="https://www.linkedin.com/in/gustavo-hernandes11/"
         />
         <SocialButton
             icon={Github}
-            color={color}
+            color={color ?? theme.colors[color]}
             href="https://github.com/gustavohernandes11"
         />
         <SocialButton
             icon={Leetcode}
-            color={color}
+            color={color ?? theme.colors[color]}
             href="https://leetcode.com/hernandes11/"
         />
     </span>

@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Mixins } from "styles/Mixins";
 import { Text } from "./Text";
 
 export type SkillCardType = {
@@ -26,11 +27,7 @@ const StyledSkillCard = styled.div`
         transition: box-shadow 500ms ease;
 
         :hover {
-            -webkit-box-shadow: 0px 0px 0px 10px
-                ${({ theme }) => theme.colors.border};
-            -moz-box-shadow: 0px 0px 0px 10px
-                ${({ theme }) => theme.colors.border};
-            box-shadow: 4px 4px 0px 0px ${({ theme }) => theme.colors.border};
+            ${Mixins.shadow()}
         }
     `}
 `;

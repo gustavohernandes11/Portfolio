@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { theme } from "styles/Theme";
 
 type TextOptions = {
@@ -13,16 +12,13 @@ export const Text = ({
     color = "black",
 }: TextOptions) => {
     return (
-        <StyledText
+        <p
             style={{
                 fontSize: size === "normal" ? "1rem" : "2rem",
-                color:
-                    color === "black" ? theme.colors.black : theme.colors.white,
+                color: theme.colors[color],
             }}
         >
             {children}
-        </StyledText>
+        </p>
     );
 };
-
-const StyledText = styled.p``;

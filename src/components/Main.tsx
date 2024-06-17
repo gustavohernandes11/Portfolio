@@ -12,6 +12,5 @@ export const StyledMain = styled.main`
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
-        max-width: unset;
     }
 `;

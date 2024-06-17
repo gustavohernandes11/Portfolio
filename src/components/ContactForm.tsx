@@ -1,6 +1,7 @@
 import { Send } from "@styled-icons/feather";
 import styled from "styled-components";
 import { Mixins } from "styles/Mixins";
+import { theme } from "styles/Theme";
 import { Button } from "./Button";
 
 const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -32,10 +33,10 @@ export const ContactForm = () => {
             data-netlify="true"
             onSubmit={handleSubmit}
         >
-            <SmallSpan>
+            <StyledSmallSpan>
                 <StyledInput type="hidden" name="form-name" value="contact" />
 
-                <Label htmlFor="name-input">Nome</Label>
+                <StyledLabel htmlFor="name-input">Nome</StyledLabel>
                 <StyledInput
                     required
                     type="text"
@@ -45,9 +46,9 @@ export const ContactForm = () => {
                     name="name-input"
                     id="name-input"
                 />
-            </SmallSpan>
-            <SmallSpan>
-                <Label htmlFor="email-input">Email</Label>
+            </StyledSmallSpan>
+            <StyledSmallSpan>
+                <StyledLabel htmlFor="email-input">Email</StyledLabel>
                 <StyledInput
                     required
                     type="email"
@@ -58,9 +59,9 @@ export const ContactForm = () => {
                     name="email-input"
                     id="email-input"
                 />
-            </SmallSpan>
-            <LargeSpan>
-                <Label htmlFor="message-input">Mensagem</Label>
+            </StyledSmallSpan>
+            <StyledLargeSpan>
+                <StyledLabel htmlFor="message-input">Mensagem</StyledLabel>
                 <StyledTextarea
                     required
                     name="message-input"
@@ -68,12 +69,15 @@ export const ContactForm = () => {
                     placeholder="Hello World!"
                     id="message-input"
                 />
-            </LargeSpan>
-            <HorizontalSpan>
-                <Button icon={<Send color="white" size="25" />} type="submit">
+            </StyledLargeSpan>
+            <StyledHSpan>
+                <Button
+                    icon={<Send color={theme.colors.white} size="25" />}
+                    type="submit"
+                >
                     Enviar
                 </Button>
-            </HorizontalSpan>
+            </StyledHSpan>
         </StyledContactForm>
     );
 };
@@ -89,16 +93,16 @@ const StyledContactForm = styled.form`
     }
 `;
 
-const Label = styled.label`
+const StyledLabel = styled.label`
     display: block;
     margin-bottom: 0.5rem;
 `;
 
-const LargeSpan = styled.span`
+const StyledLargeSpan = styled.span`
     grid-column: span 2;
 `;
 
-const SmallSpan = styled.span`
+const StyledSmallSpan = styled.span`
     grid-column: span 1;
 
     @media (max-width: 768px) {
@@ -106,7 +110,7 @@ const SmallSpan = styled.span`
     }
 `;
 
-const HorizontalSpan = styled(LargeSpan)`
+const StyledHSpan = styled(StyledLargeSpan)`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -118,8 +122,5 @@ const StyledInput = styled.input`
 
 const StyledTextarea = styled.textarea`
     ${Mixins.inputBaseStyles}
-    min-width: 26rem;
     resize: vertical;
-    min-height: 4rem;
-    max-height: 14rem;
 `;
