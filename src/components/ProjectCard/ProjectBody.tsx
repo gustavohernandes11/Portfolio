@@ -19,8 +19,7 @@ const StyledContainer = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     padding: 1rem;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
     background: ${({ theme }) => theme.colors.black};
 `;
 

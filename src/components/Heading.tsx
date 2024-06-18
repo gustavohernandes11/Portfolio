@@ -6,9 +6,8 @@ export const Heading = ({ children, as, ...props }: WrapperType) => (
 );
 
 const StyledHeading = styled.h2`
-    font-size: 1.5rem;
+    font: 600 1.5rem;
     margin-bottom: 2rem;
-    font-weight: 600;
 
     @media (max-width: 768px) {
         font-size: 1.25rem;

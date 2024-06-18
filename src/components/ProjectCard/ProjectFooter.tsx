@@ -50,8 +50,7 @@ const StyledContainer = styled.div`
     justify-content: flex-end;
     width: 100%;
     padding: 1rem;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
+    border-radius: 0rem 0rem 0.5rem 0.5rem;
     background: ${({ theme }) => theme.colors.black};
 
     @media (max-width: 768px) {

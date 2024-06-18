@@ -117,10 +117,10 @@ const StyledHSpan = styled(StyledLargeSpan)`
 `;
 
 const StyledInput = styled.input`
-    ${Mixins.inputBaseStyles}
+    ${Mixins.inputBaseStyles()}
 `;
 
 const StyledTextarea = styled.textarea`
-    ${Mixins.inputBaseStyles}
+    ${Mixins.inputBaseStyles()}
     resize: vertical;
 `;
