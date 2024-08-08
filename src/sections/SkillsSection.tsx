@@ -42,5 +42,5 @@ export const SkillsSection = () => (
 const StyledGrid = styled.div`
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 `;
